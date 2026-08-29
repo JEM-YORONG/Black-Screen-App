@@ -30,7 +30,7 @@ When you're watching videos or using apps in Picture-in-Picture mode, the screen
 
 Download the release APK and install it directly on your Android device:
 
-1. Download [`black-screen-app.apk`](https://drive.google.com/file/d/16ExR6btUis2PtJjfowYEN4IaaLf8YmQ1/view?usp=sharing)
+1. Download [`Black Display.apk`](https://drive.google.com/file/d/1iA_AN6O8GnOvulX7dBrIgO7uZWAilLbv/view?usp=sharing)
 2. Transfer the APK to your Android device
 3. Enable installation from unknown sources (Settings > Security > Unknown Sources)
 4. Open the APK file and follow the installation prompts
@@ -42,7 +42,7 @@ Download the release APK and install it directly on your Android device:
 To build the release APK yourself:
 
 ```bash
-./gradlew assembleRelease
+.\gradlew.bat assembleRelease
 ```
 
 The release APK will be generated at `app/build/outputs/apk/release/app-release.apk`.
@@ -77,29 +77,6 @@ The release APK will be generated at `app/build/outputs/apk/release/app-release.
 - **Build System:** Gradle (AGP 9.2.1)
 - **Min SDK:** 26
 - **Target SDK:** 36
-
-## Project Structure
-
-```
-app/
-  src/
-    main/
-      java/com/devijem/blackscreenapp/
-        MainActivity.kt          # Main activity with immersive mode
-        ui/theme/
-          Theme.kt               # Compose theme
-          Color.kt               # Color definitions
-          Type.kt                # Typography definitions
-      res/
-        layout/
-          activity_main.xml      # Black screen layout
-        values/
-          strings.xml
-          colors.xml
-          themes.xml
-        drawable/                # App icons and drawables
-        mipmap-*/                # Launcher icons
-```
 
 ## License
 
