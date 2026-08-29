@@ -17,12 +17,12 @@ When you're watching videos or using apps in Picture-in-Picture mode, the screen
 
 ## How It Works
 
-1. Start using an app in Picture-in-Picture mode (e.g., YouTube, video player)
-2. Open the Black Screen App
-3. The Black Screen App displays a full-screen pure black background
-4. Your PiP content appears on top of the black screen
-5. Because OLED/AMOLED pixels are completely off when displaying black, power consumption drops significantly
-6. Continue using your device normally — the black background stays visible and the screen stays awake
+1. Start using an app in Picture-in-Picture mode (e.g., YouTube, video player).
+2. Open the **Black Screen App**.
+3. The app displays a full-screen pure black background.
+4. Your PiP content appears on top of the black screen.
+5. Because OLED/AMOLED pixels are completely off when displaying black, power consumption drops significantly.
+6. Continue using your device normally — the black background stays visible and the screen stays awake.
 
 ## Installation
 
@@ -30,45 +30,43 @@ When you're watching videos or using apps in Picture-in-Picture mode, the screen
 
 Download the release APK and install it directly on your Android device:
 
-1. Download [`Black Display.apk`](https://drive.google.com/file/d/1iA_AN6O8GnOvulX7dBrIgO7uZWAilLbv/view?usp=sharing)
-2. Transfer the APK to your Android device
-3. Enable installation from unknown sources (Settings > Security > Unknown Sources)
-4. Open the APK file and follow the installation prompts
+1. Download [`Black Display.apk`](https://drive.google.com/file/d/1EceXRRimS_Jdh3lsUJijwBKZaWZcDMu8/view?usp=sharing)
+2. Transfer the APK to your Android device.
+3. Enable installation from unknown sources (Settings > Security > Unknown Sources).
+4. Open the APK file and follow the installation prompts.
 
 > **Note:** This is a release build. It may show a warning about being from an unknown source, which is expected for apps installed outside of the Google Play Store.
 
-### Building the Release APK
+## Building from Source
 
-To build the release APK yourself:
+The project is configured with automatic signing in Gradle. Ensure you have your `my-release-key.jks` in the `app/` directory and your credentials configured in `app/build.gradle.kts`.
 
+### Build Signed APK
 ```bash
 .\gradlew.bat assembleRelease
 ```
+Output: `app/build/outputs/apk/release/app-release.apk`
 
-The release APK will be generated at `app/build/outputs/apk/release/app-release.apk`.
-
-## Usage
-
-1. Start a video or media app and enter Picture-in-Picture mode
-2. Open the Black Screen App
-3. The app displays a full-screen black background
-4. Your PiP content appears on top of the black background, helping save battery
-5. Use your device normally
-6. To exit, open the Black Screen App again and close it
+### Build Signed App Bundle (.aab)
+Required for Google Play Store submission:
+```bash
+.\gradlew.bat bundleRelease
+```
+Output: `app/build/outputs/bundle/release/app-release.aab`
 
 ## Development
 
 ### Prerequisites
 
-- Android Studio
-- JDK 11
-- Android SDK with compileSdk 36
+- **Android Studio** (Latest stable version recommended)
+- **JDK 17** (Required by newer AGP versions)
+- **Android SDK** with `compileSdk 37`
 
 ### Get started
 
-1. Open the project in Android Studio
-2. Sync Gradle dependencies
-3. Run on an Android device or emulator
+1. Open the project in Android Studio.
+2. Sync Gradle dependencies.
+3. Run on an Android device or emulator.
 
 ## Tech Stack
 
@@ -76,7 +74,8 @@ The release APK will be generated at `app/build/outputs/apk/release/app-release.
 - **UI:** Jetpack Compose
 - **Build System:** Gradle (AGP 9.2.1)
 - **Min SDK:** 26
-- **Target SDK:** 36
+- **Target SDK:** 35
+- **Compile SDK:** 37
 
 ## License
 
